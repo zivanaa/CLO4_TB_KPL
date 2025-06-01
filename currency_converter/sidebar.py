@@ -3,6 +3,12 @@ from landing_page import get_landing_content
 from all_currencies import get_all_currencies_content
 from convertergui import get_converter_content
 from history import get_history_content
+import streamlit as st
+
+def setup_sidebar():
+    st.sidebar.title("Currency Hub")
+    page = st.sidebar.radio("Navigate", ["Home", "Converter", "History", "About"])
+    return page
 
 app = Flask(__name__)
 
@@ -25,7 +31,7 @@ def currencies():
 @app.route('/converter')
 def converter():
     content = get_converter_content()
-    return render_template("sidebar.html", 
+    return render_template("tempaltes/sidebar.html", 
                            title="Currency Converter", 
                            content=content, 
                            page="converter")
