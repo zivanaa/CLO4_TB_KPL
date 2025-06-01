@@ -162,6 +162,34 @@ def get_converter_content():
             // Hide results
             hideResults();
         }
+        
+        function convertCurrency() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const fromCurrency = document.getElementById('from-currency').value;
+            const toCurrency = document.getElementById('to-currency').value;
+            const showAll = document.getElementById('show-all').checked;
+
+            if (!amount || amount <= 0) {
+                showError('Please enter a valid amount');
+                return;
+            }
+
+            showLoading();
+
+            setTimeout(() => {
+                try {
+                    if (showAll) {
+                        showAllConversions(amount, fromCurrency);
+                    } else {
+                        const result = performConversion(amount, fromCurrency, toCurrency);
+                        showSingleResult(amount, fromCurrency, toCurrency, result);
+                    }
+                } catch (error) {
+                    showError('Conversion failed: ' + error.message);
+                }
+                hideLoading();
+            }, 800);
+        }
 
     </script>
     """
