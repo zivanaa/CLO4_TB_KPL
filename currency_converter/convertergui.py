@@ -108,6 +108,14 @@ def get_converter_content():
                                 <h4>🇮🇩 IDR to USD</h4>
                                 <p>Indonesian Rupiah to US Dollar</p>
                             </div>
+                            <div class="quick-option" onclick="quickConvert('EUR', 'USD')">
+                                <h4>🇪🇺 EUR to USD</h4>
+                                <p>Euro to US Dollar</p>
+                            </div>
+                            <div class="quick-option" onclick="showAllFromIDR()">
+                                <h4>🇮🇩 All from IDR</h4>
+                                <p>Indonesian Rupiah to all currencies</p>
+                            </div>
                         <!-- Quick options populated dynamically -->
                     </div>
                 </div>
