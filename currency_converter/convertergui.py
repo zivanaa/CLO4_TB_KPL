@@ -206,6 +206,21 @@ def get_converter_content():
                 hideLoading();
             }, 800);
         }
+        
+        function showAllFromIDR() {
+            const amount = parseFloat(document.getElementById('quick-amount').value) || 100;
+            
+            showLoading();
+
+            setTimeout(() => {
+                try {
+                    showAllConversions(amount, 'IDR');
+                } catch (error) {
+                    showError('Conversion failed: ' + error.message);
+                }
+                hideLoading();
+            }, 800);
+        }
 
     </script>
     """
