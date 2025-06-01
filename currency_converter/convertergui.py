@@ -36,12 +36,34 @@ def get_converter_content():
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="from-currency">From Currency</label>
-                                <select id="from-currency"></select>
+                                <select id="from-currency">
+                                    <option value="USD">USD - US Dollar</option>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="IDR">IDR - Indonesian Rupiah</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="AUD">AUD - Australian Dollar</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                    <option value="CHF">CHF - Swiss Franc</option>
+                                    <option value="CNY">CNY - Chinese Yuan</option>
+                                    <option value="SGD">SGD - Singapore Dollar</option>
+                                </select>
                             </div>
                               
                             <div class="form-group">
                                 <label for="to-currency">To Currency</label>
-                                <select id="to-currency"></select>
+                                <select id="to-currency">
+                                    <option value="IDR">IDR - Indonesian Rupiah</option>
+                                    <option value="USD">USD - US Dollar</option>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="AUD">AUD - Australian Dollar</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                    <option value="CHF">CHF - Swiss Franc</option>
+                                    <option value="CNY">CNY - Chinese Yuan</option>
+                                    <option value="SGD">SGD - Singapore Dollar</option>
+                                </select>
                             </div>
                         </div>
 
@@ -69,6 +91,31 @@ def get_converter_content():
                     </div>
                     <br>
                     <div class="quick-menu" id="quick-menu">
+                        <div class="quick-menu">
+                            <div class="quick-option" onclick="quickConvert('USD', 'EUR')">
+                                <h4>💵 USD to EUR</h4>
+                                <p>US Dollar to Euro</p>
+                            </div>
+                            <div class="quick-option" onclick="quickConvert('USD', 'IDR')">
+                                <h4>💵 USD to IDR</h4>
+                                <p>US Dollar to Indonesian Rupiah</p>
+                            </div>
+                            <div class="quick-option" onclick="quickConvert('USD', 'JPY')">
+                                <h4>💵 USD to JPY</h4>
+                                <p>US Dollar to Japanese Yen</p>
+                            </div>
+                            <div class="quick-option" onclick="quickConvert('IDR', 'USD')">
+                                <h4>🇮🇩 IDR to USD</h4>
+                                <p>Indonesian Rupiah to US Dollar</p>
+                            </div>
+                            <div class="quick-option" onclick="quickConvert('EUR', 'USD')">
+                                <h4>🇪🇺 EUR to USD</h4>
+                                <p>Euro to US Dollar</p>
+                            </div>
+                            <div class="quick-option" onclick="showAllFromIDR()">
+                                <h4>🇮🇩 All from IDR</h4>
+                                <p>Indonesian Rupiah to all currencies</p>
+                            </div>
                         <!-- Quick options populated dynamically -->
                     </div>
                 </div>
