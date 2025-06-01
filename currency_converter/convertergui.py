@@ -2,25 +2,25 @@ def get_converter_content():
     """
     Generate HTML content for currency converter page
     """
-    return '''
+    return """
     <head>
         <link rel="stylesheet" href="/static/css/style1.css">
     </head>
     <body>
-      <div class="converter-container">
-        <div class="header">
-            <h1>Currency Converter</h1>
-            <p>Convert currencies with real-time exchange rates</p>
-        </div>
+        <div class="converter-container">
+            <div class="header">
+                <h1>Currency Converter</h1>
+                <p>Convert currencies with real-time exchange rates</p>
+            </div>
 
-        <div class="mode-selector">
-            <button class="mode-btn active" onclick="switchMode('flexible')">
-                🌐 Flexible Mode
-            </button>
-            <button class="mode-btn" onclick="switchMode('quick')">
-                ⚡ Quick Menu
-            </button>
-        </div>
+            <div class="mode-selector">
+                <button class="mode-btn active" onclick="switchMode('flexible')">
+                    🌐 Flexible Mode
+                </button>
+                <button class="mode-btn" onclick="switchMode('quick')">
+                    ⚡ Quick Menu
+                </button>
+            </div>
 
         <div class="converter-modes">
             <!-- Flexible Mode -->
@@ -88,4 +88,4 @@ def get_converter_content():
             </div>
         </div>
     </body>
-    '''
+    """
