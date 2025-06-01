@@ -39,3 +39,9 @@ def get_all_conversions(amount, from_currency):
         for code in supported_codes
         if code in conversion_rates and code != from_currency
     }
+
+def generate_currency_options():
+    options = ""
+    for code, name in SUPPORTED_CURRENCIES:
+        options += f'<option value="{code}">{code} - {name}</option>\n'
+    return options
