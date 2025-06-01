@@ -250,6 +250,37 @@ def get_converter_content():
             resultSection.classList.add('show');
             hideError();
         }
+        
+        function showAllConversions(amount, from) {
+            const resultSection = document.getElementById('result-section');
+            const resultTitle = document.getElementById('result-title');
+            const resultContent = document.getElementById('result-content');
+
+            resultTitle.textContent = 📊 ${amount} ${from} to all currencies;
+
+            let html = '';
+            const currencies = Object.keys(exchangeRates);
+            
+            currencies.forEach(currency => {
+                if (currency !== from) {
+                    try {
+                        const result = performConversion(amount, from, currency);
+                        html += `
+                            <div class="result-item">
+                                <span class="currency-code">${currency}</span>
+                                <span class="currency-value">${result.toLocaleString(undefined, {maximumFractionDigits: 2})}</span>
+                            </div>
+                        `;
+                    } catch (error) {
+                        // Skip unsupported conversions
+                    }
+                }
+            });
+
+            resultContent.innerHTML = html;
+            resultSection.classList.add('show');
+            hideError();
+        }
 
     </script>
     """
