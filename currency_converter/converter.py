@@ -20,3 +20,22 @@ def convert_currency(amount, from_currency, to_currency):
         return amount * data["conversion_rate"]
     else:
         raise Exception("Conversion failed from API")
+
+def get_all_conversions(amount, from_currency):
+    url = f"https://v6.exchangerate-api.com/v6/{API_KEY}/latest/{from_currency}"
+    response = requests.get(url)
+    data = response.json()
+
+    if data["result"] != "success":
+        raise Exception("Failed to fetch conversion data.")
+
+    conversion_rates = data["conversion_rates"]
+
+    # Ambil hanya kode mata uang dari SUPPORTED_CURRENCIES
+    supported_codes = [code for code, _ in SUPPORTED_CURRENCIES]
+
+    return {
+        code: round(conversion_rates[code] * amount, 2)
+        for code in supported_codes
+        if code in conversion_rates and code != from_currency
+    }
