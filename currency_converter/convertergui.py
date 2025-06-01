@@ -233,6 +233,23 @@ def get_converter_content():
 
             return amount * exchangeRates[from][to];
         }
+        
+        function showSingleResult(amount, from, to, result) {
+            const resultSection = document.getElementById('result-section');
+            const resultTitle = document.getElementById('result-title');
+            const resultContent = document.getElementById('result-content');
+
+            resultTitle.textContent = 💱 Conversion Result;
+            resultContent.innerHTML = `
+                <div class="result-item">
+                    <span class="currency-code">${amount} ${from}</span>
+                    <span class="currency-value">${result.toLocaleString(undefined, {maximumFractionDigits: 2})} ${to}</span>
+                </div>
+            `;
+
+            resultSection.classList.add('show');
+            hideError();
+        }
 
     </script>
     """
