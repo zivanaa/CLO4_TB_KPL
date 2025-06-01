@@ -287,6 +287,11 @@ def get_converter_content():
             hideResults();
             hideError();
         }
+        
+        function hideLoading() {
+            document.getElementById('loading').classList.remove('show');
+        }
+
 
 
     </script>
