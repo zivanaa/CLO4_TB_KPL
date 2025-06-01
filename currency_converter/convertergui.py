@@ -288,17 +288,6 @@ def get_converter_content():
             hideError();
         }
 
-        function hideLoading() {
-            document.getElementById('loading').classList.remove('show');
-        }
-
-        function showError(message) {
-            const errorElement = document.getElementById('error-message');
-            errorElement.textContent = '❌ ' + message;
-            errorElement.classList.add('show');
-            hideResults();
-        }
-
 
     </script>
     """
