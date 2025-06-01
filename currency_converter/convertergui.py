@@ -302,8 +302,10 @@ def get_converter_content():
         function hideError() {
             document.getElementById('error-message').classList.remove('show');
         }
-
-
+        
+        function hideResults() {
+            document.getElementById('result-section').classList.remove('show');
+        }
 
     </script>
     """
