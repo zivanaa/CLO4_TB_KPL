@@ -298,6 +298,10 @@ def get_converter_content():
             errorElement.classList.add('show');
             hideResults();
         }
+        
+        function hideError() {
+            document.getElementById('error-message').classList.remove('show');
+        }
 
 
 
