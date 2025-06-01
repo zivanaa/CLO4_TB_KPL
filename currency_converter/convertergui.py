@@ -281,6 +281,13 @@ def get_converter_content():
             resultSection.classList.add('show');
             hideError();
         }
+        
+        function showLoading() {
+            document.getElementById('loading').classList.add('show');
+            hideResults();
+            hideError();
+        }
+
 
     </script>
     """
