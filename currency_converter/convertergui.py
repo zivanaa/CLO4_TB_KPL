@@ -52,7 +52,18 @@ def get_converter_content():
                               
                             <div class="form-group">
                                 <label for="to-currency">To Currency</label>
-                                <select id="to-currency"></select>
+                                <select id="to-currency">
+                                    <option value="IDR">IDR - Indonesian Rupiah</option>
+                                    <option value="USD">USD - US Dollar</option>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="AUD">AUD - Australian Dollar</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                    <option value="CHF">CHF - Swiss Franc</option>
+                                    <option value="CNY">CNY - Chinese Yuan</option>
+                                    <option value="SGD">SGD - Singapore Dollar</option>
+                                </select>
                             </div>
                         </div>
 
