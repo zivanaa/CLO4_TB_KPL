@@ -149,5 +149,19 @@ def get_converter_content():
             CNY: { USD: 0.155, EUR: 0.132, IDR: 2325, JPY: 17.05, GBP: 0.113, AUD: 0.209, CAD: 0.194, CHF: 0.142, SGD: 0.209 },
             SGD: { USD: 0.74, EUR: 0.63, IDR: 11100, JPY: 81.5, GBP: 0.54, AUD: 1.0, CAD: 0.93, CHF: 0.68, CNY: 4.78 }
         };
+        
+        function switchMode(mode) {
+            // Update buttons
+            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update content
+            document.querySelectorAll('.mode-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(mode + '-mode').classList.add('active');
+
+            // Hide results
+            hideResults();
+        }
+
     </script>
     """
