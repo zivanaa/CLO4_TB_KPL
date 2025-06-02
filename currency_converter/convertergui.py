@@ -176,15 +176,12 @@ def get_converter_content():
         };
         
         function switchMode(mode) {
-            // Update buttons
             document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
 
-            // Update content
             document.querySelectorAll('.mode-content').forEach(content => content.classList.remove('active'));
-            document.getElementById(mode + '-mode').classList.add('active');
+            document.getElementById(mode + "-mode").classList.add("active");
 
-            // Hide results
             hideResults();
         }
         
