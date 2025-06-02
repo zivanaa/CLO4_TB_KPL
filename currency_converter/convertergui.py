@@ -199,6 +199,23 @@ def get_converter_content():
                 font-size: 1.2rem;
                 margin-bottom: 10px;
             }
+            
+            .quick-option p {
+            color: #ccc;
+            font-size: 0.9rem;
+            }
+            
+            .loading {
+                display: none;
+                text-align: center;
+                color: #e94560;
+                font-size: 1.1rem;
+                margin-top: 20px;
+            }
+
+            .loading.show {
+                display: block;
+            }
         </style>
     </head>
     <body>
