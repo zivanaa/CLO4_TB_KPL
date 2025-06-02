@@ -377,3 +377,22 @@ class CurrencyConverter:
     def get_currency_name(self, currency_code):
         """Get full name of currency"""
         return self.currency_names.get(currency_code, currency_code)
+    
+    # Initialize converter instance
+converter = CurrencyConverter()
+
+
+def format_currency(amount, currency_code):
+    """Format currency amount for display"""
+    if currency_code == 'IDR':
+        return f"Rp {amount:,.0f}"
+    elif currency_code == 'JPY':
+        return f"¥{amount:,.0f}"
+    elif currency_code == 'USD':
+        return f"${amount:,.2f}"
+    elif currency_code == 'EUR':
+        return f"€{amount:,.2f}"
+    elif currency_code == 'GBP':
+        return f"£{amount:,.2f}"
+    else:
+        return f"{amount:,.2f} {currency_code}"
