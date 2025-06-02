@@ -22,33 +22,22 @@ def get_converter_content():
                 </button>
             </div>
 
-        <div class="converter-modes">
-            <!-- Flexible Mode -->
-            <div class="mode-content active" id="flexible-mode">
-                <div class="converter-card">
-                    <h3>🌐 Flexible Converter</h3>
-                    <div class="converter-form">
-                        <div class="form-group">
-                            <label for="amount">Amount</label>
-                            <input type="number" id="amount" step="0.01" min="0" />
-                        </div>
-                          
-                        <div class="form-row">
+            <div class="converter-modes">
+                <!-- Flexible Mode -->
+                <div class="mode-content active" id="flexible-mode">
+                    <div class="converter-card">
+                        <h3>🌐 Flexible Converter</h3>
+                        <div class="converter-form">
                             <div class="form-group">
-                                <label for="from-currency">From Currency</label>
-                                <select id="from-currency">
-                                    <option value="USD">USD - US Dollar</option>
-                                    <option value="EUR">EUR - Euro</option>
-                                    <option value="IDR">IDR - Indonesian Rupiah</option>
-                                    <option value="JPY">JPY - Japanese Yen</option>
-                                    <option value="GBP">GBP - British Pound</option>
-                                    <option value="AUD">AUD - Australian Dollar</option>
-                                    <option value="CAD">CAD - Canadian Dollar</option>
-                                    <option value="CHF">CHF - Swiss Franc</option>
-                                    <option value="CNY">CNY - Chinese Yuan</option>
-                                    <option value="SGD">SGD - Singapore Dollar</option>
-                                </select>
+                                <label for="amount">Amount</label>
+                                <input type="number" id="amount" step="0.01" min="0" />
                             </div>
+                          
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="from-currency">From Currency</label>
+                                    <select id="from-currency"></select>
+                                </div>
                               
                             <div class="form-group">
                                 <label for="to-currency">To Currency</label>
