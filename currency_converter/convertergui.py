@@ -326,3 +326,16 @@ class CurrencyConverter:
             'CNY': {'USD': 0.155, 'EUR': 0.132, 'IDR': 2325, 'JPY': 17.05, 'GBP': 0.113, 'AUD': 0.209, 'CAD': 0.194, 'CHF': 0.142, 'SGD': 0.209},
             'SGD': {'USD': 0.74, 'EUR': 0.63, 'IDR': 11100, 'JPY': 81.5, 'GBP': 0.54, 'AUD': 1.0, 'CAD': 0.93, 'CHF': 0.68, 'CNY': 4.78}
         }
+        
+        self.currency_names = {
+            'USD': 'US Dollar',
+            'EUR': 'Euro',
+            'IDR': 'Indonesian Rupiah',
+            'JPY': 'Japanese Yen',
+            'GBP': 'British Pound',
+            'AUD': 'Australian Dollar',
+            'CAD': 'Canadian Dollar',
+            'CHF': 'Swiss Franc',
+            'CNY': 'Chinese Yuan',
+            'SGD': 'Singapore Dollar'
+        }
