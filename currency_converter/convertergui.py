@@ -58,6 +58,28 @@ def get_converter_content():
             .mode-content.active {
                 display: block;
             }
+            
+            @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+            }
+
+            .converter-form {
+                display: grid;
+                gap: 20px;
+            }
+
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .form-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
         </style>
     </head>
     <body>
