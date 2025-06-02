@@ -339,3 +339,17 @@ class CurrencyConverter:
             'CNY': 'Chinese Yuan',
             'SGD': 'Singapore Dollar'
         }
+        
+    def convert(self, amount, from_currency, to_currency):
+        """Convert amount from one currency to another"""
+        if from_currency == to_currency:
+            return amount
+        
+        if from_currency not in self.exchange_rates:
+            raise ValueError(f"Currency {from_currency} not supported")
+        
+        if to_currency not in self.exchange_rates[from_currency]:
+            raise ValueError(f"Conversion from {from_currency} to {to_currency} not supported")
+        
+        rate = self.exchange_rates[from_currency][to_currency]
+        return amount * rate
