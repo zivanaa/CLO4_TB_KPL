@@ -176,3 +176,31 @@
     line-height: 1.5;
     font-size: 14px;
 }
+
+.cta-section {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(15, 52, 96, 0.3) 0%, rgba(233, 69, 96, 0.1) 100%);
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.cta-title {
+    font-size: 24px;
+    color: #e94560;
+    margin-bottom: 15px;
+}
+
+.cta-desc {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.last-updated {
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(233, 69, 96, 0.2);
+}
