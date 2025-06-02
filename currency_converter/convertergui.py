@@ -259,35 +259,6 @@ def get_converter_content():
             hideResults();
         }
         
-        function quickConvert(from, to) {
-            const amount = parseFloat(document.getElementById('quick-amount').value) || 100;
-            
-            showLoading();
-
-            setTimeout(() => {
-                try {
-                    const result = performConversion(amount, from, to);
-                    showSingleResult(amount, from, to, result);
-                } catch (error) {
-                    showError('Conversion failed: ' + error.message);
-                }
-                hideLoading();
-            }, 800);
-        }
-        
-        
-        function performConversion(amount, from, to) {
-            if (from === to) {
-                return amount;
-            }
-
-            if (!exchangeRates[from] || !exchangeRates[from][to]) {
-                throw new Error(Conversion from ${from} to ${to} not supported);
-            }
-
-            return amount * exchangeRates[from][to];
-        }
-        
         
         function showLoading() {
             document.getElementById('loading').classList.add('show');
