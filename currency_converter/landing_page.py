@@ -7,3 +7,8 @@ def get_landing_content():
     """
     current_time = datetime.now().strftime("%B %d, %Y")
     return render_template("landing_page.html", current_time=current_time)
+
+def get_quick_stats():
+    """
+    Get quick stats for dashboard
+    """
