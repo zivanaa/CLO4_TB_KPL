@@ -225,6 +225,16 @@ def get_converter_content():
       return data.conversion_rate;
     }
     
+    function showSingleResult(amount, from, to, result) {
+      document.getElementById("result-title").textContent = "Conversion Result";
+      document.getElementById("result-content").innerHTML = `
+        <div class="result-item">
+          <span class="currency-code">${amount} ${from}</span>
+          <span class="currency-value">${result.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${to}</span>
+        </div>`;
+      showResults();
+    }
+    
     // Sample exchange rates
         const exchangeRates = {
             USD: { EUR: 0.85, IDR: 15000, JPY: 110, GBP: 0.73, AUD: 1.35, CAD: 1.25, CHF: 0.92, CNY: 6.45, SGD: 1.35 },
@@ -276,23 +286,6 @@ def get_converter_content():
             }
 
             return amount * exchangeRates[from][to];
-        }
-        
-        function showSingleResult(amount, from, to, result) {
-            const resultSection = document.getElementById('result-section');
-            const resultTitle = document.getElementById('result-title');
-            const resultContent = document.getElementById('result-content');
-
-            resultTitle.textContent = 💱 Conversion Result;
-            resultContent.innerHTML = `
-                <div class="result-item">
-                    <span class="currency-code">${amount} ${from}</span>
-                    <span class="currency-value">${result.toLocaleString(undefined, {maximumFractionDigits: 2})} ${to}</span>
-                </div>
-            `;
-
-            resultSection.classList.add('show');
-            hideError();
         }
         
         
