@@ -268,7 +268,12 @@ def get_converter_content():
     function hideResults() {
       document.getElementById("result-section").classList.remove("show");
     }
-
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("amount").value = 100;
+        populateCurrencyOptions(); // Memuat <select>
+        populateQuickMenu();       // Memuat Quick Menu khusus
+    });
 
     </script>
     """
