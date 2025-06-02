@@ -44,6 +44,20 @@ def get_converter_content():
                 border-color: #e94560;
                 box-shadow: 0 8px 25px rgba(233, 69, 96, 0.4);
             }
+            
+            .converter-modes {
+            display: grid;
+            gap: 30px;
+            }
+
+            .mode-content {
+                display: none;
+                animation: slideIn 0.5s ease;
+            }
+
+            .mode-content.active {
+                display: block;
+            }
         </style>
     </head>
     <body>
