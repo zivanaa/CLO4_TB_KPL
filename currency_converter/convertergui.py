@@ -243,33 +243,32 @@ def get_converter_content():
       document.getElementById(mode + "-mode").classList.add("active");
 
       hideResults();
+    } 
+        
+    function showLoading() {
+      document.getElementById("loading").classList.add("show");
+      hideError();
     }
         
+    function hideLoading() {
+      document.getElementById("loading").classList.remove("show");
+    }
         
-        function showLoading() {
-            document.getElementById('loading').classList.add('show');
-            hideResults();
-            hideError();
-        }
+    function showError(message) {
+        const el = document.getElementById("error-message");
+        el.textContent = message;
+        el.classList.add("show");
+        hideResults();
+    }
         
-        function hideLoading() {
-            document.getElementById('loading').classList.remove('show');
-        }
+    function hideError() {
+        document.getElementById("error-message").classList.remove("show");
+    }
         
-        function showError(message) {
-            const errorElement = document.getElementById('error-message');
-            errorElement.textContent = '❌ ' + message;
-            errorElement.classList.add('show');
-            hideResults();
-        }
-        
-        function hideError() {
-            document.getElementById('error-message').classList.remove('show');
-        }
-        
-        function hideResults() {
-            document.getElementById('result-section').classList.remove('show');
-        }
+    function hideResults() {
+      document.getElementById("result-section").classList.remove("show");
+    }
+
 
     </script>
     """
