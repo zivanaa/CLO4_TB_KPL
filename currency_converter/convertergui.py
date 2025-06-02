@@ -1,3 +1,5 @@
+from converter import generate_currency_options
+
 def get_converter_content():
     """
     Generate HTML content for currency converter page
@@ -90,8 +92,9 @@ def get_converter_content():
     </body>
     
     <script>
-    const API_KEY = "99af1e52e8b504f480478eda";
     
+    const API_KEY = "99af1e52e8b504f480478eda";
+
     const QUICK_CONVERSIONS = {
         "1": { desc: "USD to EUR", from: "USD", to: "EUR" },
         "2": { desc: "USD to IDR", from: "USD", to: "IDR" },
@@ -100,7 +103,8 @@ def get_converter_content():
         "5": { desc: "EUR to USD", from: "EUR", to: "USD" },
         "6": { desc: "Show all from IDR", from: "IDR", to: null },
         };
-    
+
+
     async function populateCurrencyOptions() {
       try {
         const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/codes`);
@@ -120,7 +124,7 @@ def get_converter_content():
         console.error(error);
       }
     }
-    
+
     function populateQuickMenu() {
         const menu = document.getElementById("quick-menu");
         let html = "";
@@ -136,7 +140,8 @@ def get_converter_content():
 
         menu.innerHTML = html;
     }
-    
+
+
     async function convertCurrency() {
       const amount = parseFloat(document.getElementById("amount").value);
       const from = document.getElementById("from-currency").value;
@@ -160,7 +165,7 @@ def get_converter_content():
 
       hideLoading();
     }
-    
+
     async function quickConvert(from, to) {
       const amount = parseFloat(document.getElementById("quick-amount").value || 100);
       showLoading();
@@ -174,7 +179,7 @@ def get_converter_content():
 
       hideLoading();
     }
-    
+
     function showAllFromIDR() {
         const amount = parseFloat(document.getElementById("quick-amount").value || 100);
         showLoading();
@@ -186,7 +191,8 @@ def get_converter_content():
             hideLoading();
             });
     }
-    
+
+
     async function showAllConversionsAPI(amount, from, targetCurrencies = null) {
         const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${from}`);
         const data = await response.json();
@@ -216,7 +222,8 @@ def get_converter_content():
         showResults();
         hideError();
     }
-    
+
+
     async function getConversionRate(from, to) {
       if (from === to) return 1;
       const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${from}/${to}`);
@@ -224,7 +231,7 @@ def get_converter_content():
       if (data.result !== "success") throw new Error(`Cannot convert ${from} to ${to}`);
       return data.conversion_rate;
     }
-    
+
     function showSingleResult(amount, from, to, result) {
       document.getElementById("result-title").textContent = "Conversion Result";
       document.getElementById("result-content").innerHTML = `
@@ -234,7 +241,7 @@ def get_converter_content():
         </div>`;
       showResults();
     }
-        
+
     function switchMode(mode) {
       document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
@@ -243,37 +250,40 @@ def get_converter_content():
       document.getElementById(mode + "-mode").classList.add("active");
 
       hideResults();
-    } 
-        
+    }
+
+    function showError(message) {
+      const el = document.getElementById("error-message");
+      el.textContent = message;
+      el.classList.add("show");
+      hideResults();
+    }
+
     function showLoading() {
       document.getElementById("loading").classList.add("show");
       hideError();
     }
-        
+
     function hideLoading() {
       document.getElementById("loading").classList.remove("show");
     }
-        
-    function showError(message) {
-        const el = document.getElementById("error-message");
-        el.textContent = message;
-        el.classList.add("show");
-        hideResults();
-    }
-        
+
     function hideError() {
-        document.getElementById("error-message").classList.remove("show");
+      document.getElementById("error-message").classList.remove("show");
     }
-        
+
+    function showResults() {
+      document.getElementById("result-section").classList.add("show");
+    }
+
     function hideResults() {
       document.getElementById("result-section").classList.remove("show");
     }
-    
+
     document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("amount").value = 100;
         populateCurrencyOptions(); // Memuat <select>
         populateQuickMenu();       // Memuat Quick Menu khusus
     });
-
     </script>
     """
