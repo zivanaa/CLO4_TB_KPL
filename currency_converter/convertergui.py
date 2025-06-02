@@ -309,3 +309,20 @@ def get_converter_content():
 
     </script>
     """
+    
+# Currency conversion logic
+class CurrencyConverter:
+    def _init_(self):
+        # Sample exchange rates (in production, fetch from API)
+        self.exchange_rates = {
+            'USD': {'EUR': 0.85, 'IDR': 15000, 'JPY': 110, 'GBP': 0.73, 'AUD': 1.35, 'CAD': 1.25, 'CHF': 0.92, 'CNY': 6.45, 'SGD': 1.35},
+            'EUR': {'USD': 1.18, 'IDR': 17650, 'JPY': 129.5, 'GBP': 0.86, 'AUD': 1.59, 'CAD': 1.47, 'CHF': 1.08, 'CNY': 7.6, 'SGD': 1.59},
+            'IDR': {'USD': 0.000067, 'EUR': 0.000057, 'JPY': 0.0073, 'GBP': 0.000049, 'AUD': 0.00009, 'CAD': 0.000083, 'CHF': 0.000061, 'CNY': 0.00043, 'SGD': 0.00009},
+            'JPY': {'USD': 0.0091, 'EUR': 0.0077, 'IDR': 136.4, 'GBP': 0.0066, 'AUD': 0.012, 'CAD': 0.011, 'CHF': 0.0084, 'CNY': 0.059, 'SGD': 0.012},
+            'GBP': {'USD': 1.37, 'EUR': 1.16, 'IDR': 20550, 'JPY': 150.7, 'AUD': 1.85, 'CAD': 1.71, 'CHF': 1.26, 'CNY': 8.84, 'SGD': 1.85},
+            'AUD': {'USD': 0.74, 'EUR': 0.63, 'IDR': 11100, 'JPY': 81.5, 'GBP': 0.54, 'CAD': 0.93, 'CHF': 0.68, 'CNY': 4.78, 'SGD': 1.0},
+            'CAD': {'USD': 0.8, 'EUR': 0.68, 'IDR': 12000, 'JPY': 88, 'GBP': 0.58, 'AUD': 1.08, 'CHF': 0.74, 'CNY': 5.16, 'SGD': 1.08},
+            'CHF': {'USD': 1.09, 'EUR': 0.93, 'IDR': 16350, 'JPY': 119.6, 'GBP': 0.79, 'AUD': 1.47, 'CAD': 1.36, 'CNY': 7.03, 'SGD': 1.47},
+            'CNY': {'USD': 0.155, 'EUR': 0.132, 'IDR': 2325, 'JPY': 17.05, 'GBP': 0.113, 'AUD': 0.209, 'CAD': 0.194, 'CHF': 0.142, 'SGD': 0.209},
+            'SGD': {'USD': 0.74, 'EUR': 0.63, 'IDR': 11100, 'JPY': 81.5, 'GBP': 0.54, 'AUD': 1.0, 'CAD': 0.93, 'CHF': 0.68, 'CNY': 4.78}
+        }
