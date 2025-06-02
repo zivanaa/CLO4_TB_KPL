@@ -231,6 +231,27 @@ def get_converter_content():
                 display: block;
                 animation: shake 0.5s ease;
             }
+            
+            @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+            }
+
+            @media (max-width: 768px) {
+                .mode-selector {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .form-row {
+                    grid-template-columns: 1fr;
+                }
+
+                .quick-menu {
+                    grid-template-columns: 1fr;
+                }
+            }
         </style>
     </head>
     <body>
