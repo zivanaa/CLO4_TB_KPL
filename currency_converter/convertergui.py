@@ -20,6 +20,30 @@ def get_converter_content():
                 gap: 20px;
                 margin-bottom: 40px;
             }
+            
+            .mode-btn {
+            padding: 15px 30px;
+            background: linear-gradient(145deg, #0f3460 0%, #16213e 100%);
+            border: 2px solid transparent;
+            border-radius: 15px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: 600;
+            }
+            
+            .mode-btn:hover {
+                border-color: #e94560;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
+            }
+
+            .mode-btn.active {
+                background: linear-gradient(145deg, #e94560 0%, #d63447 100%);
+                border-color: #e94560;
+                box-shadow: 0 8px 25px rgba(233, 69, 96, 0.4);
+            }
         </style>
     </head>
     <body>
