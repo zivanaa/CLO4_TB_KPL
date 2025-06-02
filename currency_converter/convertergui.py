@@ -59,7 +59,7 @@ def get_converter_content():
                 </div>
             </div>
 
-            <!-- Quick Menu Mode -->
+            !-- Quick Menu Mode -->
             <div class="mode-content" id="quick-mode">
                 <div class="converter-card">
                     <h3>⚡ Quick Convert</h3>
@@ -69,31 +69,6 @@ def get_converter_content():
                     </div>
                     <br>
                     <div class="quick-menu" id="quick-menu">
-                        <div class="quick-menu">
-                            <div class="quick-option" onclick="quickConvert('USD', 'EUR')">
-                                <h4>💵 USD to EUR</h4>
-                                <p>US Dollar to Euro</p>
-                            </div>
-                            <div class="quick-option" onclick="quickConvert('USD', 'IDR')">
-                                <h4>💵 USD to IDR</h4>
-                                <p>US Dollar to Indonesian Rupiah</p>
-                            </div>
-                            <div class="quick-option" onclick="quickConvert('USD', 'JPY')">
-                                <h4>💵 USD to JPY</h4>
-                                <p>US Dollar to Japanese Yen</p>
-                            </div>
-                            <div class="quick-option" onclick="quickConvert('IDR', 'USD')">
-                                <h4>🇮🇩 IDR to USD</h4>
-                                <p>Indonesian Rupiah to US Dollar</p>
-                            </div>
-                            <div class="quick-option" onclick="quickConvert('EUR', 'USD')">
-                                <h4>🇪🇺 EUR to USD</h4>
-                                <p>Euro to US Dollar</p>
-                            </div>
-                            <div class="quick-option" onclick="showAllFromIDR()">
-                                <h4>🇮🇩 All from IDR</h4>
-                                <p>Indonesian Rupiah to all currencies</p>
-                            </div>
                         <!-- Quick options populated dynamically -->
                     </div>
                 </div>
