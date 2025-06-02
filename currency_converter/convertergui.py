@@ -102,6 +102,28 @@ def get_converter_content():
                 border-color: #e94560;
                 box-shadow: 0 0 15px rgba(233, 69, 96, 0.3);
             }
+            
+            .convert-btn {
+            padding: 18px 40px;
+            background: linear-gradient(145deg, #e94560 0%, #d63447 100%);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            }
+
+            .convert-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(233, 69, 96, 0.4);
+            }
+
+            .convert-btn:active {
+                transform: translateY(0);
+            }
         </style>
     </head>
     <body>
