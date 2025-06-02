@@ -88,7 +88,30 @@ def get_converter_content():
             </div>
         </div>
     </body>
+    
     <script>
+    const API_KEY = "99af1e52e8b504f480478eda";
+    
+    async function populateCurrencyOptions() {
+      try {
+        const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/codes`);
+        const data = await response.json();
+        if (data.result !== "success") throw new Error("API failed");
+
+        const options = data.supported_codes.map(
+          ([code, name]) => `<option value="${code}">${code} - ${name}</option>`
+        ).join("");
+
+        document.getElementById('from-currency').innerHTML = options;
+        document.getElementById('to-currency').innerHTML = options;
+
+        populateQuickMenu(data.supported_codes.slice(0, 6)); // First 6 pairs
+      } catch (error) {
+        showError("Failed to load currency list.");
+        console.error(error);
+      }
+    }
+    
     // Sample exchange rates
         const exchangeRates = {
             USD: { EUR: 0.85, IDR: 15000, JPY: 110, GBP: 0.73, AUD: 1.35, CAD: 1.25, CHF: 0.92, CNY: 6.45, SGD: 1.35 },
