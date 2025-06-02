@@ -92,6 +92,15 @@ def get_converter_content():
     <script>
     const API_KEY = "99af1e52e8b504f480478eda";
     
+    const QUICK_CONVERSIONS = {
+        "1": { desc: "USD to EUR", from: "USD", to: "EUR" },
+        "2": { desc: "USD to IDR", from: "USD", to: "IDR" },
+        "3": { desc: "USD to JPY", from: "USD", to: "JPY" },
+        "4": { desc: "IDR to USD", from: "IDR", to: "USD" },
+        "5": { desc: "EUR to USD", from: "EUR", to: "USD" },
+        "6": { desc: "Show all from IDR", from: "IDR", to: null },
+        };
+    
     async function populateCurrencyOptions() {
       try {
         const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/codes`);
@@ -128,6 +137,30 @@ def get_converter_content():
         menu.innerHTML = html;
     }
     
+    async function convertCurrency() {
+      const amount = parseFloat(document.getElementById("amount").value);
+      const from = document.getElementById("from-currency").value;
+      const to = document.getElementById("to-currency").value;
+      const showAll = document.getElementById("show-all").checked;
+
+      if (!amount || amount <= 0) return showError("Enter valid amount");
+
+      showLoading();
+
+      try {
+        if (showAll) {
+          await showAllConversionsAPI(amount, from);
+        } else {
+          const result = await getConversionRate(from, to);
+          showSingleResult(amount, from, to, amount * result);
+        }
+      } catch (e) {
+        showError(e.message);
+      }
+
+      hideLoading();
+    }
+    
     // Sample exchange rates
         const exchangeRates = {
             USD: { EUR: 0.85, IDR: 15000, JPY: 110, GBP: 0.73, AUD: 1.35, CAD: 1.25, CHF: 0.92, CNY: 6.45, SGD: 1.35 },
@@ -153,34 +186,6 @@ def get_converter_content():
 
             // Hide results
             hideResults();
-        }
-        
-        function convertCurrency() {
-            const amount = parseFloat(document.getElementById('amount').value);
-            const fromCurrency = document.getElementById('from-currency').value;
-            const toCurrency = document.getElementById('to-currency').value;
-            const showAll = document.getElementById('show-all').checked;
-
-            if (!amount || amount <= 0) {
-                showError('Please enter a valid amount');
-                return;
-            }
-
-            showLoading();
-
-            setTimeout(() => {
-                try {
-                    if (showAll) {
-                        showAllConversions(amount, fromCurrency);
-                    } else {
-                        const result = performConversion(amount, fromCurrency, toCurrency);
-                        showSingleResult(amount, fromCurrency, toCurrency, result);
-                    }
-                } catch (error) {
-                    showError('Conversion failed: ' + error.message);
-                }
-                hideLoading();
-            }, 800);
         }
         
         function quickConvert(from, to) {
