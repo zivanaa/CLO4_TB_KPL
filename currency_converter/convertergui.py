@@ -175,6 +175,18 @@ def get_converter_content():
       hideLoading();
     }
     
+    function showAllFromIDR() {
+        const amount = parseFloat(document.getElementById("quick-amount").value || 100);
+        showLoading();
+
+        showAllConversionsAPI(amount, "IDR", ["USD", "EUR", "JPY"])
+            .then(() => hideLoading())
+            .catch(error => {
+            showError("Conversion failed: " + error.message);
+            hideLoading();
+            });
+    }
+    
     // Sample exchange rates
         const exchangeRates = {
             USD: { EUR: 0.85, IDR: 15000, JPY: 110, GBP: 0.73, AUD: 1.35, CAD: 1.25, CHF: 0.92, CNY: 6.45, SGD: 1.35 },
