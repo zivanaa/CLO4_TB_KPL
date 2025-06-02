@@ -12,3 +12,9 @@ def get_quick_stats():
     """
     Get quick stats for dashboard
     """
+    return {
+        'total_currencies': 180,
+        'update_frequency': 'Real-time',
+        'accuracy': '99.9%',
+        'uptime': '24/7'
+    }
