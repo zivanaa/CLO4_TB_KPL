@@ -187,6 +187,36 @@ def get_converter_content():
             });
     }
     
+    async function showAllConversionsAPI(amount, from, targetCurrencies = null) {
+        const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${from}`);
+        const data = await response.json();
+
+        if (data.result !== "success") {
+            throw new Error("Failed to fetch conversion data.");
+        }
+
+        const rates = data.conversion_rates;
+
+        const html = Object.entries(rates)
+            .filter(([code]) => {
+            if (code === from) return false;
+            return targetCurrencies ? targetCurrencies.includes(code) : true;
+            })
+            .map(([code, rate]) => `
+            <div class="result-item">
+                <span class="currency-code">${code}</span>
+                <span class="currency-value">${(rate * amount).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+            </div>
+            `).join("");
+
+        document.getElementById("result-title").textContent =
+            targetCurrencies ? `${amount} ${from} to selected currencies` : `${amount} ${from} to all currencies`;
+
+        document.getElementById("result-content").innerHTML = html;
+        showResults();
+        hideError();
+    }
+    
     // Sample exchange rates
         const exchangeRates = {
             USD: { EUR: 0.85, IDR: 15000, JPY: 110, GBP: 0.73, AUD: 1.35, CAD: 1.25, CHF: 0.92, CNY: 6.45, SGD: 1.35 },
@@ -257,36 +287,6 @@ def get_converter_content():
             hideError();
         }
         
-        function showAllConversions(amount, from) {
-            const resultSection = document.getElementById('result-section');
-            const resultTitle = document.getElementById('result-title');
-            const resultContent = document.getElementById('result-content');
-
-            resultTitle.textContent = 📊 ${amount} ${from} to all currencies;
-
-            let html = '';
-            const currencies = Object.keys(exchangeRates);
-            
-            currencies.forEach(currency => {
-                if (currency !== from) {
-                    try {
-                        const result = performConversion(amount, from, currency);
-                        html += `
-                            <div class="result-item">
-                                <span class="currency-code">${currency}</span>
-                                <span class="currency-value">${result.toLocaleString(undefined, {maximumFractionDigits: 2})}</span>
-                            </div>
-                        `;
-                    } catch (error) {
-                        // Skip unsupported conversions
-                    }
-                }
-            });
-
-            resultContent.innerHTML = html;
-            resultSection.classList.add('show');
-            hideError();
-        }
         
         function showLoading() {
             document.getElementById('loading').classList.add('show');
