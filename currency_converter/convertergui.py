@@ -216,6 +216,21 @@ def get_converter_content():
             .loading.show {
                 display: block;
             }
+            
+            .error-message {
+            background: rgba(220, 53, 69, 0.2);
+            border: 1px solid #dc3545;
+            color: #ff6b7a;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+            }
+
+            .error-message.show {
+                display: block;
+                animation: shake 0.5s ease;
+            }
         </style>
     </head>
     <body>
