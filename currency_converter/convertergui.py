@@ -80,6 +80,28 @@ def get_converter_content():
                 grid-template-columns: 1fr 1fr;
                 gap: 20px;
             }
+            
+            label {
+            font-weight: 600;
+            color: #ccc;
+            font-size: 1rem;
+            }
+
+            input, select {
+                padding: 15px;
+                background: rgba(26, 26, 46, 0.8);
+                border: 2px solid rgba(233, 69, 96, 0.3);
+                border-radius: 10px;
+                color: white;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+            }
+
+            input:focus, select:focus {
+                outline: none;
+                border-color: #e94560;
+                box-shadow: 0 0 15px rgba(233, 69, 96, 0.3);
+            }
         </style>
     </head>
     <body>
