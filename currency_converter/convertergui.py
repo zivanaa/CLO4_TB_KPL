@@ -161,6 +161,20 @@ def get_converter_content():
       hideLoading();
     }
     
+    async function quickConvert(from, to) {
+      const amount = parseFloat(document.getElementById("quick-amount").value || 100);
+      showLoading();
+
+      try {
+        const rate = await getConversionRate(from, to);
+        showSingleResult(amount, from, to, amount * rate);
+      } catch (e) {
+        showError(e.message);
+      }
+
+      hideLoading();
+    }
+    
     // Sample exchange rates
         const exchangeRates = {
             USD: { EUR: 0.85, IDR: 15000, JPY: 110, GBP: 0.73, AUD: 1.35, CAD: 1.25, CHF: 0.92, CNY: 6.45, SGD: 1.35 },
