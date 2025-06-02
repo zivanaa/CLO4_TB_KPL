@@ -92,6 +92,15 @@ def get_converter_content():
     <script>
     const API_KEY = "99af1e52e8b504f480478eda";
     
+    const QUICK_CONVERSIONS = {
+        "1": { desc: "USD to EUR", from: "USD", to: "EUR" },
+        "2": { desc: "USD to IDR", from: "USD", to: "IDR" },
+        "3": { desc: "USD to JPY", from: "USD", to: "JPY" },
+        "4": { desc: "IDR to USD", from: "IDR", to: "USD" },
+        "5": { desc: "EUR to USD", from: "EUR", to: "USD" },
+        "6": { desc: "Show all from IDR", from: "IDR", to: null },
+        };
+    
     async function populateCurrencyOptions() {
       try {
         const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/codes`);
