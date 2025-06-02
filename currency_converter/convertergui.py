@@ -235,15 +235,15 @@ def get_converter_content():
       showResults();
     }
         
-        function switchMode(mode) {
-            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+    function switchMode(mode) {
+      document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
 
-            document.querySelectorAll('.mode-content').forEach(content => content.classList.remove('active'));
-            document.getElementById(mode + "-mode").classList.add("active");
+      document.querySelectorAll('.mode-content').forEach(content => content.classList.remove('active'));
+      document.getElementById(mode + "-mode").classList.add("active");
 
-            hideResults();
-        }
+      hideResults();
+    }
         
         
         function showLoading() {
