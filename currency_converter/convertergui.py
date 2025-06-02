@@ -4,7 +4,23 @@ def get_converter_content():
     """
     return """
     <head>
-        <link rel="stylesheet" href="/static/css/style1.css">
+        <style>
+            .converter-container {
+                animation: fadeIn 0.8s ease;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(30px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .mode-selector {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+        </style>
     </head>
     <body>
         <div class="converter-container">
