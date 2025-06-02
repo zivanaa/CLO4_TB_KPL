@@ -353,3 +353,19 @@ class CurrencyConverter:
         
         rate = self.exchange_rates[from_currency][to_currency]
         return amount * rate
+    
+    def convert_to_all(self, amount, from_currency):
+        """Convert amount to all available currencies"""
+        results = {}
+        
+        if from_currency not in self.exchange_rates:
+            raise ValueError(f"Currency {from_currency} not supported")
+        
+        for to_currency in self.exchange_rates[from_currency]:
+            rate = self.exchange_rates[from_currency][to_currency]
+            results[to_currency] = {
+                'amount': amount * rate,
+                'name': self.currency_names.get(to_currency, to_currency)
+            }
+        
+        return results
