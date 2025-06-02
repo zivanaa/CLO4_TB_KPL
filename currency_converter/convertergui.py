@@ -369,3 +369,7 @@ class CurrencyConverter:
             }
         
         return results
+    
+    def get_supported_currencies(self):
+        """Get list of supported currencies"""
+        return list(self.currency_names.keys())
