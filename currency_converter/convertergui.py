@@ -124,6 +124,44 @@ def get_converter_content():
             .convert-btn:active {
                 transform: translateY(0);
             }
+            
+            .result-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(26, 26, 46, 0.5);
+            border-radius: 15px;
+            border-left: 4px solid #e94560;
+            display: none;
+            }
+
+            .result-section.show {
+                display: block;
+                animation: slideUp 0.5s ease;
+            }
+
+            @keyframes slideUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .result-title {
+                color: #e94560;
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+                font-weight: 600;
+            }
+
+            .result-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(233, 69, 96, 0.1);
+            }
+
+            .result-item:last-child {
+                border-bottom: none;
+            }
         </style>
     </head>
     <body>
