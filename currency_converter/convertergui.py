@@ -112,6 +112,22 @@ def get_converter_content():
       }
     }
     
+    function populateQuickMenu() {
+        const menu = document.getElementById("quick-menu");
+        let html = "";
+
+        Object.entries(QUICK_CONVERSIONS).forEach(([id, { desc, from, to }]) => {
+            html += `
+            <div class="quick-option" onclick="${to ? `quickConvert('${from}', '${to}')` : `showAllFromIDR()`}">
+                <h4>${desc}</h4>
+                <p>${from}${to ? ` to ${to}` : ' to all currencies'}</p>
+            </div>
+            `;
+        });
+
+        menu.innerHTML = html;
+    }
+    
     // Sample exchange rates
         const exchangeRates = {
             USD: { EUR: 0.85, IDR: 15000, JPY: 110, GBP: 0.73, AUD: 1.35, CAD: 1.25, CHF: 0.92, CNY: 6.45, SGD: 1.35 },
