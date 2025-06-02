@@ -162,6 +162,16 @@ def get_converter_content():
             .result-item:last-child {
                 border-bottom: none;
             }
+            
+            .currency-code {
+            font-weight: 600;
+            color: #e94560;
+            }
+
+            .currency-value {
+                font-size: 1.1rem;
+                color: white;
+            }
         </style>
     </head>
     <body>
