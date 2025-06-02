@@ -373,3 +373,7 @@ class CurrencyConverter:
     def get_supported_currencies(self):
         """Get list of supported currencies"""
         return list(self.currency_names.keys())
+    
+    def get_currency_name(self, currency_code):
+        """Get full name of currency"""
+        return self.currency_names.get(currency_code, currency_code)
