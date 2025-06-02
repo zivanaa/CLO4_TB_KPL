@@ -172,6 +172,33 @@ def get_converter_content():
                 font-size: 1.1rem;
                 color: white;
             }
+            
+            .quick-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            }
+
+            .quick-option {
+                background: rgba(26, 26, 46, 0.6);
+                border: 2px solid rgba(233, 69, 96, 0.2);
+                border-radius: 15px;
+                padding: 20px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .quick-option:hover {
+                border-color: #e94560;
+                background: rgba(233, 69, 96, 0.1);
+                transform: translateY(-3px);
+            }
+
+            .quick-option h4 {
+                color: #e94560;
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
         </style>
     </head>
     <body>
