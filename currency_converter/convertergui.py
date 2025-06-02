@@ -217,6 +217,14 @@ def get_converter_content():
         hideError();
     }
     
+    async function getConversionRate(from, to) {
+      if (from === to) return 1;
+      const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${from}/${to}`);
+      const data = await response.json();
+      if (data.result !== "success") throw new Error(`Cannot convert ${from} to ${to}`);
+      return data.conversion_rate;
+    }
+    
     // Sample exchange rates
         const exchangeRates = {
             USD: { EUR: 0.85, IDR: 15000, JPY: 110, GBP: 0.73, AUD: 1.35, CAD: 1.25, CHF: 0.92, CNY: 6.45, SGD: 1.35 },
