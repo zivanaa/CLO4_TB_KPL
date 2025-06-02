@@ -9,37 +9,37 @@ def get_converter_content():
         <link rel="stylesheet" href="/static/style_converter.css">
     </head>
     <body>
-        <div class="converter-container">
-            <div class="header">
-                <h1>Currency Converter</h1>
-                <p>Convert currencies with real-time exchange rates</p>
-            </div>
+      <div class="converter-container">
+        <div class="header">
+            <h1>Currency Converter</h1>
+            <p>Convert currencies with real-time exchange rates</p>
+        </div>
 
-            <div class="mode-selector">
-                <button class="mode-btn active" onclick="switchMode('flexible')">
-                    🌐 Flexible Mode
-                </button>
-                <button class="mode-btn" onclick="switchMode('quick')">
-                    ⚡ Quick Menu
-                </button>
-            </div>
+        <div class="mode-selector">
+            <button class="mode-btn active" onclick="switchMode('flexible')">
+                🌐 Flexible Mode
+            </button>
+            <button class="mode-btn" onclick="switchMode('quick')">
+                ⚡ Quick Menu
+            </button>
+        </div>
 
-            <div class="converter-modes">
-                <!-- Flexible Mode -->
-                <div class="mode-content active" id="flexible-mode">
-                    <div class="converter-card">
-                        <h3>🌐 Flexible Converter</h3>
-                        <div class="converter-form">
-                            <div class="form-group">
-                                <label for="amount">Amount</label>
-                                <input type="number" id="amount" step="0.01" min="0" />
-                            </div>
+        <div class="converter-modes">
+            <!-- Flexible Mode -->
+            <div class="mode-content active" id="flexible-mode">
+                <div class="converter-card">
+                    <h3>🌐 Flexible Converter</h3>
+                    <div class="converter-form">
+                        <div class="form-group">
+                            <label for="amount">Amount</label>
+                            <input type="number" id="amount" step="0.01" min="0" />
+                        </div>
                           
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="from-currency">From Currency</label>
-                                    <select id="from-currency"></select>
-                                </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="from-currency">From Currency</label>
+                                <select id="from-currency"></select>
+                            </div>
                               
                             <div class="form-group">
                                 <label for="to-currency">To Currency</label>
@@ -61,7 +61,7 @@ def get_converter_content():
                 </div>
             </div>
 
-            !-- Quick Menu Mode -->
+            <!-- Quick Menu Mode -->
             <div class="mode-content" id="quick-mode">
                 <div class="converter-card">
                     <h3>⚡ Quick Convert</h3>
