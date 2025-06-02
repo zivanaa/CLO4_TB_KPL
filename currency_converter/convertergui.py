@@ -90,6 +90,7 @@ def get_converter_content():
     </body>
     
     <script>
+    const API_KEY = "99af1e52e8b504f480478eda";
     
     async function populateCurrencyOptions() {
       try {
