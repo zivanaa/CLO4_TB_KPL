@@ -76,3 +76,8 @@ def get_all_currencies_content():
             <p>Failed to fetch currency data from the API. Please check your internet connection and try again.</p>
         </div>
         """
+  
+    flags = get_currency_flags()
+    regions = group_currencies_by_region()
+    popular = get_popular_currencies()
+    
