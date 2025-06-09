@@ -43,5 +43,7 @@ def group_currencies_by_region():
         'North America': ['USD', 'CAD', 'MXN', 'GTQ', 'BZD', 'HNL', 'SVC', 'NIO', 'CRC', 'PAB'],
         'Europe': ['EUR', 'GBP', 'CHF', 'SEK', 'NOK', 'DKK', 'PLN', 'CZK', 'HUF', 'RON', 'BGN', 'HRK', 'ISK', 'RSD', 'MKD', 'ALL', 'BAM'],
         'Asia': ['JPY', 'CNY', 'INR', 'KRW', 'SGD', 'HKD', 'THB', 'MYR', 'IDR', 'PHP', 'VND', 'TWD', 'PKR', 'LKR', 'NPR', 'BDT', 'MMK', 'LAK', 'KHR'],
+        'Middle East': ['AED', 'SAR', 'QAR', 'KWD', 'BHD', 'OMR', 'JOD', 'LBP', 'ILS', 'YER', 'IRR'],
+
     }
     return regions
