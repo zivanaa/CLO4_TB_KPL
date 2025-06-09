@@ -46,6 +46,7 @@ def group_currencies_by_region():
         'Middle East': ['AED', 'SAR', 'QAR', 'KWD', 'BHD', 'OMR', 'JOD', 'LBP', 'ILS', 'YER', 'IRR'],
         'Africa': ['ZAR', 'EGP', 'NGN', 'KES', 'GHS', 'MAD', 'TND', 'DZD', 'ETB', 'UGX', 'TZS', 'ZMW', 'BWP', 'NAD'],
         'South America': ['BRL', 'ARS', 'CLP', 'COP', 'PEN', 'VES', 'UYU', 'BOB', 'PYG', 'GYD', 'SRD'],
+        'Caribbean': ['XCD', 'JMD', 'TTD', 'BBD', 'BSD', 'DOP', 'HTG', 'CUP', 'AWG', 'ANG'],
 
 
     }
