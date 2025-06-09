@@ -50,3 +50,18 @@ def group_currencies_by_region():
         'Oceania': ['AUD', 'NZD', 'FJD', 'PGK', 'WST', 'TOP', 'VUV', 'SBD', 'XPF']
     }
     return regions
+
+def get_popular_currencies():
+    """Get list of most traded currencies"""
+    return [
+        ('USD', 'US Dollar'),
+        ('EUR', 'Euro'),
+        ('JPY', 'Japanese Yen'),
+        ('GBP', 'British Pound'),
+        ('AUD', 'Australian Dollar'),
+        ('CAD', 'Canadian Dollar'),
+        ('CHF', 'Swiss Franc'),
+        ('CNY', 'Chinese Yuan'),
+        ('SEK', 'Swedish Krona'),
+        ('NZD', 'New Zealand Dollar')
+    ]
