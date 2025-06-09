@@ -36,3 +36,10 @@ def get_currency_flags():
         'BAM': '🇧🇦', 'EUR': '🇪🇺'
     }
     return flags
+
+def group_currencies_by_region():
+    """Group currencies by geographical regions"""
+    regions = {
+        'North America': ['USD', 'CAD', 'MXN', 'GTQ', 'BZD', 'HNL', 'SVC', 'NIO', 'CRC', 'PAB'],
+    }
+    return regions
