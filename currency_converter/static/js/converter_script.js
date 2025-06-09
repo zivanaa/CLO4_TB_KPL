@@ -72,7 +72,7 @@ async function convertCurrency() {
 }
 
 async function quickConvert(from, to) {
-    const amount = parseFloat(document.getElementById("quick-amount").value || 100);
+    const amount = parseFloat(document.getElementById("quick-amount").value || 100000);
     showLoading();
 
     try {
@@ -86,7 +86,7 @@ async function quickConvert(from, to) {
 }
 
 function showAllFromIDR() {
-    const amount = parseFloat(document.getElementById("quick-amount").value || 100);
+    const amount = parseFloat(document.getElementById("quick-amount").value || 100000);
     showLoading();
 
     showAllConversionsAPI(amount, "IDR", ["USD", "EUR", "JPY"])
@@ -137,14 +137,28 @@ async function getConversionRate(from, to) {
     return data.conversion_rate;
 }
 
+
 function showSingleResult(amount, from, to, result) {
     document.getElementById("result-title").textContent = "Conversion Result";
     document.getElementById("result-content").innerHTML = `
-        <div class="result-item">
-          <span class="currency-code">${amount} ${from}</span>
-          <span class="currency-value">${result.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${to}</span>
-        </div>`;
+    <div class="result-item">
+        <span class="currency-code">${amount} ${from}</span>
+        <span class="currency-value">${result.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${to}</span>
+    </div>`;
     showResults();
+
+
+    fetch("/save-history", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            type: "single",
+            amount: amount,
+            from: from,
+            to: to,
+            result: result
+        })
+    }).catch(err => console.error("Failed to save history:", err));
 }
 
 function switchMode(mode) {
@@ -185,8 +199,9 @@ function hideResults() {
     document.getElementById("result-section").classList.remove("show");
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("amount").value = 100;
+    document.getElementById("amount").value = 100000;
     populateCurrencyOptions(); // Memuat <select>
     populateQuickMenu();       // Memuat Quick Menu khusus
 });
