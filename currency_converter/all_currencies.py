@@ -81,3 +81,15 @@ def get_all_currencies_content():
     regions = group_currencies_by_region()
     popular = get_popular_currencies()
     
+  html_content = f"""
+    <style>
+        .currency-container {{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: white;
+            min-height: 100vh;
+        }}
+    </style>
+    """
