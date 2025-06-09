@@ -41,5 +41,6 @@ def group_currencies_by_region():
     """Group currencies by geographical regions"""
     regions = {
         'North America': ['USD', 'CAD', 'MXN', 'GTQ', 'BZD', 'HNL', 'SVC', 'NIO', 'CRC', 'PAB'],
+        'Europe': ['EUR', 'GBP', 'CHF', 'SEK', 'NOK', 'DKK', 'PLN', 'CZK', 'HUF', 'RON', 'BGN', 'HRK', 'ISK', 'RSD', 'MKD', 'ALL', 'BAM'],
     }
     return regions
