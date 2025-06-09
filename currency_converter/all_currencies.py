@@ -65,3 +65,14 @@ def get_popular_currencies():
         ('SEK', 'Swedish Krona'),
         ('NZD', 'New Zealand Dollar')
     ]
+
+def get_all_currencies_content():
+    """Generate HTML content for all currencies page"""
+    
+    if not SUPPORTED_CURRENCIES:
+        return """
+        <div class="alert alert-warning" style="background: rgba(233, 69, 96, 0.1); border: 1px solid #e94560; color: white; padding: 20px; border-radius: 10px;">
+            <h4 style="color: #e94560;">⚠ Unable to Load Currencies</h4>
+            <p>Failed to fetch currency data from the API. Please check your internet connection and try again.</p>
+        </div>
+        """
