@@ -47,7 +47,6 @@ def group_currencies_by_region():
         'Africa': ['ZAR', 'EGP', 'NGN', 'KES', 'GHS', 'MAD', 'TND', 'DZD', 'ETB', 'UGX', 'TZS', 'ZMW', 'BWP', 'NAD'],
         'South America': ['BRL', 'ARS', 'CLP', 'COP', 'PEN', 'VES', 'UYU', 'BOB', 'PYG', 'GYD', 'SRD'],
         'Caribbean': ['XCD', 'JMD', 'TTD', 'BBD', 'BSD', 'DOP', 'HTG', 'CUP', 'AWG', 'ANG'],
-
-
+        'Oceania': ['AUD', 'NZD', 'FJD', 'PGK', 'WST', 'TOP', 'VUV', 'SBD', 'XPF']
     }
     return regions
