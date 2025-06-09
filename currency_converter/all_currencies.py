@@ -45,6 +45,7 @@ def group_currencies_by_region():
         'Asia': ['JPY', 'CNY', 'INR', 'KRW', 'SGD', 'HKD', 'THB', 'MYR', 'IDR', 'PHP', 'VND', 'TWD', 'PKR', 'LKR', 'NPR', 'BDT', 'MMK', 'LAK', 'KHR'],
         'Middle East': ['AED', 'SAR', 'QAR', 'KWD', 'BHD', 'OMR', 'JOD', 'LBP', 'ILS', 'YER', 'IRR'],
         'Africa': ['ZAR', 'EGP', 'NGN', 'KES', 'GHS', 'MAD', 'TND', 'DZD', 'ETB', 'UGX', 'TZS', 'ZMW', 'BWP', 'NAD'],
+        'South America': ['BRL', 'ARS', 'CLP', 'COP', 'PEN', 'VES', 'UYU', 'BOB', 'PYG', 'GYD', 'SRD'],
 
 
     }
