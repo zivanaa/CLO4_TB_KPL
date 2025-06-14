@@ -15,6 +15,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     animation: fadeIn 0.8s ease;
+    padding: 0 30px;
 }
 
 @keyframes fadeIn {
@@ -153,6 +154,7 @@ body {
     color: white;
     font-size: 1rem;
     transition: all 0.3s ease;
+    width: 100%;
 }
 
 .form-group input:focus,
@@ -173,6 +175,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
+    width: 100%;
 }
 
 .convert-btn:hover {
@@ -314,14 +317,28 @@ body {
     }
 }
 
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
-    .mode-selector {
-        flex-direction: column;
-        align-items: center;
+    .converter-container {
+        padding: 0 20px;
     }
 
     .form-row {
         grid-template-columns: 1fr;
+    }
+
+    .mode-selector {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .mode-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .convert-btn {
+        width: 100%;
     }
 
     .quick-menu {
@@ -330,5 +347,34 @@ body {
 
     .header h1 {
         font-size: 2rem;
+    }
+
+    .converter-card h3 {
+        font-size: 1.4rem;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .converter-container {
+        padding: 0 10px;
+    }
+
+    .converter-card {
+        padding: 15px;
+    }
+
+    .form-group label,
+    .quick-option p {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 0.9rem;
+    }
+
+    .convert-btn {
+        font-size: 1rem;
     }
 }
