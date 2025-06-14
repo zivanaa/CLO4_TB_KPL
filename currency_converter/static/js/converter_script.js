@@ -1,4 +1,5 @@
 const API_KEY = "99af1e52e8b504f480478eda";
+const DEFAULT_AMOUNT = 500000;
 
 const QUICK_CONVERSIONS = {
     "1": { desc: "USD to EUR", from: "USD", to: "EUR" },
@@ -72,7 +73,7 @@ async function convertCurrency() {
 }
 
 async function quickConvert(from, to) {
-    const amount = parseFloat(document.getElementById("quick-amount").value || 100000);
+    const amount = parseFloat(document.getElementById("quick-amount").value || DEFAULT_AMOUNT);
     showLoading();
 
     try {
@@ -86,7 +87,7 @@ async function quickConvert(from, to) {
 }
 
 function showAllFromIDR() {
-    const amount = parseFloat(document.getElementById("quick-amount").value || 100000);
+    const amount = parseFloat(document.getElementById("quick-amount").value || DEFAULT_AMOUNT);
     showLoading();
 
     showAllConversionsAPI(amount, "IDR", ["USD", "EUR", "JPY"])
@@ -201,7 +202,7 @@ function hideResults() {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("amount").value = 100000;
+    document.getElementById("amount").value = DEFAULT_AMOUNT;
     populateCurrencyOptions(); // Memuat <select>
     populateQuickMenu();       // Memuat Quick Menu khusus
 });
