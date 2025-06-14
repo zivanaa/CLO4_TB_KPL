@@ -1,4 +1,6 @@
 const API_KEY = "99af1e52e8b504f480478eda";
+const BASE_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}`;
+
 const DEFAULT_AMOUNT = 500000;
 
 const QUICK_CONVERSIONS = {
@@ -13,7 +15,7 @@ const QUICK_CONVERSIONS = {
 
 async function populateCurrencyOptions() {
     try {
-        const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/codes`);
+        const response = await fetch(`${BASE_URL}/codes`);
         const data = await response.json();
         if (data.result !== "success") throw new Error("API failed");
 
@@ -100,7 +102,7 @@ function showAllFromIDR() {
 
 
 async function showAllConversionsAPI(amount, from, targetCurrencies = null) {
-    const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${from}`);
+    const response = await fetch(`${BASE_URL}/latest/${from}`);
     const data = await response.json();
 
     if (data.result !== "success") {
@@ -132,7 +134,7 @@ async function showAllConversionsAPI(amount, from, targetCurrencies = null) {
 
 async function getConversionRate(from, to) {
     if (from === to) return 1;
-    const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${from}/${to}`);
+    const response = await fetch(`${BASE_URL}/pair/${from}/${to}`);
     const data = await response.json();
     if (data.result !== "success") throw new Error(`Cannot convert ${from} to ${to}`);
     return data.conversion_rate;
