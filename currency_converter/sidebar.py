@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from landing_page import get_landing_content
 from all_currencies import get_all_currencies_content
 from convertergui import get_converter_content
-from history import get_history_content
+from history import get_history_content 
 
 app = Flask(__name__)
 
